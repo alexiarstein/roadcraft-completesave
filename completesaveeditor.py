@@ -221,7 +221,9 @@ def main():
         root.withdraw()  # Hide the root window
         file_path = filedialog.askopenfilename(
             title="Select Roadcraft CompleteSave file",
-            filetypes=[("CompleteSave File", "*.*")]
+	    #filetypes=[("CompleteSave File", "*.*")] // This won't allow users to browse for the file as it will be hidden to them. Fix below:
+             filetypes=[("All files", "*"), ("CompleteSave files", "*")]
+
         )
         if not file_path:
             print("No file selected. Exiting.")
